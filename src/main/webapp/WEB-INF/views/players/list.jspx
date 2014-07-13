@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_coacha_gomanager_model_Player" items="${players}" z="OnzQ8fbuFHv3z4igDYfYdmYNe0E=">
+        <table:table data="${players}" id="l_com_coacha_gomanager_model_Player" path="/players" z="MmIX4ysq7SlmE6RcvxgQjxnCy80=">
+            <table:column id="c_com_coacha_gomanager_model_Player_kanjiName" property="kanjiName" z="QAlcCQwUXwcw9cONErr9hSqOpjg="/>
+            <table:column id="c_com_coacha_gomanager_model_Player_hiraganaName" property="hiraganaName" z="iYw2X46GAmvUich7cO11dnvk5y4="/>
+            <table:column id="c_com_coacha_gomanager_model_Player_romajiName" property="romajiName" z="xMi789rGxNqjiUACnENQIRbUVH0="/>
+            <table:column date="true" dateTimePattern="${player_birthday_date_format}" id="c_com_coacha_gomanager_model_Player_birthday" property="birthday" z="DyNZ1KGbxBmI9vHxsaM84bCOUHg="/>
+            <table:column id="c_com_coacha_gomanager_model_Player_nationality" property="nationality" z="6aH9f9PDB1k9M4dbZ9n9Sd0yFhs="/>
+            <table:column id="c_com_coacha_gomanager_model_Player_extraFieldObject" property="extraFieldObject" render="false" z="user-managed"/>
+            <table:column id="c_com_coacha_gomanager_model_Player_top" property="top" render="false" z="user-managed"/>
+        </table:table>
+    </page:list>
+</div>

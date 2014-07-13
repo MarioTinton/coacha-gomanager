@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_coacha_gomanager_model_GameResult" object="${gameresult}" path="/gameresults" z="hcPIX7C0pd1Hy3T9m47mB2BsOLU=">
+        <field:display field="winner" id="s_com_coacha_gomanager_model_GameResult_winner" object="${gameresult}" z="1/HqJDGjwk3JQM7t2z2F1lwtBGk="/>
+        <field:display field="loser" id="s_com_coacha_gomanager_model_GameResult_loser" object="${gameresult}" z="KJKXc7U308gEVe1kI1huwStqUMo="/>
+        <field:display field="winnerColor" id="s_com_coacha_gomanager_model_GameResult_winnerColor" object="${gameresult}" z="ntVvOS7tNmn9RE5w12fB2I3tWdE="/>
+        <field:display field="loserColor" id="s_com_coacha_gomanager_model_GameResult_loserColor" object="${gameresult}" z="m65l0lXghzfBdal1X2cYqxuKW8c="/>
+        <field:display field="blackStoneHandicap" id="s_com_coacha_gomanager_model_GameResult_blackStoneHandicap" object="${gameresult}" z="i2tmoKsm2jZGb7nDVc08hBdZHtk="/>
+        <field:display field="pointHandicap" id="s_com_coacha_gomanager_model_GameResult_pointHandicap" object="${gameresult}" z="3lcUOwCvNU7fsuHNIEeyYEFvCB8="/>
+        <field:display field="finalScoreDifference" id="s_com_coacha_gomanager_model_GameResult_finalScoreDifference" object="${gameresult}" z="jUqMm5PYvXAw0TffC5EsSmebzLQ="/>
+        <field:display date="true" dateTimePattern="${gameResult_gamedate_date_format}" field="gameDate" id="s_com_coacha_gomanager_model_GameResult_gameDate" object="${gameresult}" z="3ac3WLT/wC2fO7cDv8Lj1jOYtXQ="/>
+    </page:show>
+</div>

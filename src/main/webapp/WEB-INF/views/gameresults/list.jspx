@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_coacha_gomanager_model_GameResult" items="${gameresults}" z="imtwe9ss2e6pqaVlgmw9nHlUCh4=">
+        <table:table data="${gameresults}" id="l_com_coacha_gomanager_model_GameResult" path="/gameresults" z="psjQ/tD5m+H3ivl9C5/9ZnWtYiM=">
+            <table:column id="c_com_coacha_gomanager_model_GameResult_winner" property="winner" z="FklTaBMrfH2a/bFH8FkWSReTYqg="/>
+            <table:column id="c_com_coacha_gomanager_model_GameResult_loser" property="loser" z="dNz8JoMJ+fW9MF8LSPsslbSkOHE="/>
+            <table:column id="c_com_coacha_gomanager_model_GameResult_winnerColor" property="winnerColor" z="mtMYHdKwlq/uqQ8RWrmSuSDj/wE="/>
+            <table:column id="c_com_coacha_gomanager_model_GameResult_loserColor" property="loserColor" z="GHdMwPFiAqkfq22Mmvwjb9/Px4U="/>
+            <table:column id="c_com_coacha_gomanager_model_GameResult_blackStoneHandicap" property="blackStoneHandicap" z="k4BVAZIT4F3j01FHVIdgBkhvFwo="/>
+            <table:column id="c_com_coacha_gomanager_model_GameResult_pointHandicap" property="pointHandicap" z="R2TJ9ljBb2GBAcPOd5rCZz74nZ8="/>
+        </table:table>
+    </page:list>
+</div>

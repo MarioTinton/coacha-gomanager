@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:find finderName="ByWinnerAndLoser" id="ff_com_coacha_gomanager_model_GameResult" path="/gameresults" z="U3KDvN4Z7kCLGq6TgQOwSXWTNcw=">
+        <field:select disableFormBinding="true" field="winner" id="f_com_coacha_gomanager_model_player_one" itemValue="id" items="${players}" label="Player 1" path="/players" required="true" z="user-managed"/>
+        <field:select disableFormBinding="true" field="loser" id="f_com_coacha_gomanager_model_player_two" itemValue="id" items="${players}" label="Player 2" path="/players" required="true" z="user-managed"/>
+        <field:select disableFormBinding="true" field="winner" id="f_com_coacha_gomanager_model_GameResult_winner" itemValue="id" items="${players}" path="/players" required="true" z="YQJY2H5aUleF0BRawb8NJKRluvY="/>
+        <field:select disableFormBinding="true" field="loser" id="f_com_coacha_gomanager_model_GameResult_loser" itemValue="id" items="${players}" path="/players" required="true" z="wSBbvcvGrHepKQv3h03fHHQfRRU="/>
+    </form:find>
+</div>

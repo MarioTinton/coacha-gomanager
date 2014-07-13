@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_gameresult" z="QCkEdMSZXW5HSFrypdC0ywn189Y=">
+            <menu:item id="i_gameresult_new" messageCode="global_menu_new" url="/gameresults?form" z="MB3BhVmSCO9J37nIOrcK/s1nhCk="/>
+            <menu:item id="i_gameresult_list" messageCode="global_menu_list" url="/gameresults?page=1&amp;size=${empty param.size ? 10 : param.size}" z="NsFrLiz0XGAp9W+FT9s04zH1tbw="/>
+            <menu:item id="fi_gameresult_winnerandloser" messageCode="global_menu_find" url="/gameresults?find=ByWinnerAndLoser&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="LhmWP4D3Bt1VSOZ2MVxunIgvlB4="/>
+            <menu:item id="fi_gameresult_winnerorloser" messageCode="global_menu_find" url="/gameresults?find=ByWinnerOrLoser&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="+qpA8Pfi1W9lB913opXL2bYE+Ck="/>
+        </menu:category>
+        <menu:category id="c_player" z="cK8M0OPX/OW66GiF/SNgS8vWpjs=">
+            <menu:item id="i_player_new" messageCode="global_menu_new" url="/players?form" z="xCwCGj+PbS/WEOyltkUd6nZ4y4g="/>
+            <menu:item id="i_player_list" messageCode="global_menu_list" url="/players?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ZCszNjmNvFu/+xYfzxw5lZP3Y2o="/>
+            <menu:item id="fi_player_top" messageCode="global_menu_find" url="/players?find=ByTop&amp;form&amp;page=1&amp;size=${empty param.size ? 10 : param.size}" z="La6vTocNnw3Zhynvi3c8/mfBnA4="/>
+        </menu:category>
+    </menu:menu>
+</div>

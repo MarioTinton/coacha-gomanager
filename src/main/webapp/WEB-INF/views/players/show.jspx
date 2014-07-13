@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:sf="http://www.springframework.org/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_coacha_gomanager_model_Player" object="${player}" path="/players" z="d5WFwjx54B0HajNBPaVWBCC+3jI=">
+        <field:display field="kanjiName" id="s_com_coacha_gomanager_model_Player_kanjiName" object="${player}" z="mEZDdWxpJ8alAQs2DDbl3gQMpQs="/>
+        <field:display field="hiraganaName" id="s_com_coacha_gomanager_model_Player_hiraganaName" object="${player}" z="FoTe8+iBNHOwi5A4apb13pMRUhQ="/>
+        <field:display field="romajiName" id="s_com_coacha_gomanager_model_Player_romajiName" object="${player}" z="ckIZwJ2WMeuWLSbfA6gjRKhg+I8="/>
+        <field:display date="true" dateTimePattern="${player_birthday_date_format}" field="birthday" id="s_com_coacha_gomanager_model_Player_birthday" object="${player}" z="Ci9UBmzxVS4hFthYZSbY+DeQN5Y="/>
+        <field:display field="nationality" id="s_com_coacha_gomanager_model_Player_nationality" object="${player}" z="OPLZDgvZn5Sq3CeA1Cex+d9vcvw="/>
+        <c:forEach items="${player.extraFieldObject.extraFields}" varStatus="loop">
+            <!-- Add a wrapping div -->
+            <c:choose>
+                <c:when test="${player.extraFieldObject.extraFields[loop.index].remove eq 1}"><![CDATA[
+	                <div id="extraFields${loop.index}.wrapper" class="hidden">
+	]]></c:when>
+                <c:otherwise><![CDATA[
+	                <div id="extraFields${loop.index}.wrapper">
+	]]></c:otherwise>
+            </c:choose>
+            <!-- Generate the fields -->
+            <sf:label path="extraFieldObject.extraFields[${loop.index}].fieldName">${extraFieldObject.extraFields[loop.index].fieldName} :</sf:label>
+            <sf:label path="extraFieldObject.extraFields[${loop.index}].fieldData">${extraFieldObject.extraFields[loop.index].fieldData}</sf:label>
+            <!-- Add the remove flag -->
+            <c:choose>
+                <c:when test="${extraFieldObject.extraFields[loop.index].remove eq 1}">
+                    <c:set value="1" var="hiddenValue"/>
+                </c:when>
+                <c:otherwise>
+                    <c:set value="0" var="hiddenValue"/>
+                </c:otherwise>
+            </c:choose>
+            <sf:hidden path="extraFieldObject.extraFields[${loop.index}].remove" value="${hiddenValue}"/><![CDATA[
+	        </div>
+            <br/><br/>
+	        
+	]]></c:forEach>
+        <field:display field="extraFieldObject" id="s_com_coacha_gomanager_model_Player_extraFieldObject" object="${player}" render="false" z="user-managed"/>
+        <field:display field="top" id="s_com_coacha_gomanager_model_Player_top" object="${player}" render="false" z="user-managed"/>
+    </page:show>
+</div>

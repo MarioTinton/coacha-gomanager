@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:sf="http://www.springframework.org/tags/form" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <style type="text/css">.hidden {display: none;}</style>
+    <script type="text/javascript">
+    $(function() {
+
+        // Start indexing at the size of the current list
+        var index = ${fn:length(player.extraFieldObject.extraFields)};
+        // Add a new field
+        $("#add").off("click").on("click", function() {
+            $(this).before(function() {
+                var html = '<div class="hidden" id="extraField' + index + '.wrapper">';                    
+                html += '<input id="extraField' + index + '.fieldName" name="extraFieldObject.extraFields[' + index + '].fieldName" type="text"/>';
+                html += '<input id="extraField' + index + '.fieldData" name="extraFieldObject.extraFields[' + index + '].fieldData" type="text"/>';
+                html += '<input id="extraField' + index + '.remove" name="extraFieldObject.extraFields[' + index + '].remove" type="hidden" value="0"/>';
+   				html += '<a class="extraFieldremove" data-index="' + index + '" href="" onclick="return removeField(' + index + ');">remove</a>';                    
+                html += "</div>";
+                return html;
+            });
+            $("#extraField" + index + "\\.wrapper").show();
+            index++;
+            return false;
+        });
+
+        // Remove a field
+        $("a.extraFieldremove").off("click").on("click", function() {
+            var index2remove = $(this).data("index");
+            $("#extraField" + index2remove + "\\.wrapper").hide();
+            $("#extraField" + index2remove + "\\.remove").val("1");
+            return false;
+        });
+        
+    });
+    
+    function removeField(index2remove) {
+//        var index2remove = $(this).data("index");
+        $("#extraField" + index2remove + "\\.wrapper").hide();
+        $("#extraField" + index2remove + "\\.remove").val("1");
+        return false;
+    }
+
+	</script>
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_coacha_gomanager_model_Player" modelAttribute="player" path="/players" render="${empty dependencies}" z="Ut0clc1psVTVpixJOz96kYP8dOU=">
+        <field:input field="kanjiName" id="c_com_coacha_gomanager_model_Player_kanjiName" z="xmF4OXBSSrU+kVK/LWvYCjsoh/w="/>
+        <field:input field="hiraganaName" id="c_com_coacha_gomanager_model_Player_hiraganaName" required="true" z="70IZJPrr2bcvz4GUIDAB3/0uQgk="/>
+        <field:input field="romajiName" id="c_com_coacha_gomanager_model_Player_romajiName" required="true" z="E4lHVExyB5mq00UgCuif9lUSsKE="/>
+        <field:datetime dateTimePattern="${player_birthday_date_format}" field="birthday" id="c_com_coacha_gomanager_model_Player_birthday" required="true" z="ZKvuFa4sCSNtQ9L5rirH6VTlkmw="/>
+        <field:input field="nationality" id="c_com_coacha_gomanager_model_Player_nationality" required="true" z="KXMuTQfTVaWB6LR4Q0v9pGpDKRI="/>
+        <c:forEach items="${player.extraFieldObject.extraFields}" varStatus="loop">
+            <!-- Add a wrapping div -->
+            <c:choose>
+                <c:when test="${player.extraFieldObject.extraFields[loop.index].remove eq 1}"><![CDATA[
+	                <div id="extraFields${loop.index}.wrapper" class="hidden">
+	]]></c:when>
+                <c:otherwise><![CDATA[
+	                <div id="extraFields${loop.index}.wrapper">
+	]]></c:otherwise>
+            </c:choose>
+            <!-- Generate the fields -->
+            <sf:input path="extraFieldObject.extraFields[${loop.index}].fieldName"/>
+            <sf:input path="extraFieldObject.extraFields[${loop.index}].fieldData"/>
+            <!-- Add the remove flag -->
+            <c:choose>
+                <c:when test="${extraFieldObject.extraFields[loop.index].remove eq 1}">
+                    <c:set value="1" var="hiddenValue"/>
+                </c:when>
+                <c:otherwise>
+                    <c:set value="0" var="hiddenValue"/>
+                </c:otherwise>
+            </c:choose>
+            <sf:hidden path="extraFieldObject.extraFields[${loop.index}].remove" value="${hiddenValue}"/>
+            <!-- Add a link to remove the field  -->
+            <a class="extraFieldremove" data-index="${loop.index}" href="#">remove</a><![CDATA[
+	        </div>
+	]]></c:forEach>
+        <button id="add" type="button">Add Field</button>
+        <br/>
+        <br/>
+        <field:select field="extraFieldObject" id="c_com_coacha_gomanager_model_Player_extraFieldObject" itemValue="id" items="${extrafieldobjects}" path="/extrafieldobjects" render="false" z="user-managed"/>
+        <field:input field="top" id="c_com_coacha_gomanager_model_Player_top" render="false" z="user-managed"/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_coacha_gomanager_model_Player" render="${not empty dependencies}" z="f3sJyRASQbqu57mV8GGg6S116eM="/>
+</div>

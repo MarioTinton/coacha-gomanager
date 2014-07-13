@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_coacha_gomanager_model_GameResult" modelAttribute="gameResult" path="/gameresults" versionField="Version" z="q+KJjZxfE6Q3b9qUCMZJcX/3OaI=">
+        <field:select field="winner" id="c_com_coacha_gomanager_model_GameResult_winner" itemValue="id" items="${players}" path="/players" required="true" z="WKWtKHYQMsKVpxk8X+nnN2TG8A8="/>
+        <field:select field="loser" id="c_com_coacha_gomanager_model_GameResult_loser" itemValue="id" items="${players}" path="/players" required="true" z="bNW2VvNt/B0FqmChi7MBdPvnmAY="/>
+        <field:input field="winnerColor" id="c_com_coacha_gomanager_model_GameResult_winnerColor" validationMessageCode="field_invalid_integer" z="MqHRkzPR083N6MjGL0XofpwbUuE="/>
+        <field:input field="loserColor" id="c_com_coacha_gomanager_model_GameResult_loserColor" validationMessageCode="field_invalid_integer" z="FCh6KaLJxixkuicdK2LDZ+sGcVA="/>
+        <field:input field="blackStoneHandicap" id="c_com_coacha_gomanager_model_GameResult_blackStoneHandicap" validationMessageCode="field_invalid_integer" z="2ZgHczVUDLU/YZZczlX+PhYGto0="/>
+        <field:input field="pointHandicap" id="c_com_coacha_gomanager_model_GameResult_pointHandicap" validationMessageCode="field_invalid_integer" z="STXfOpy6iMTFvrcIy5S3TXxDmIM="/>
+        <field:input field="finalScoreDifference" id="c_com_coacha_gomanager_model_GameResult_finalScoreDifference" validationMessageCode="field_invalid_integer" z="Fr0cbg6d/gxphogLYw5TK2UMfpw="/>
+        <field:datetime dateTimePattern="${gameResult_gamedate_date_format}" field="gameDate" id="c_com_coacha_gomanager_model_GameResult_gameDate" z="gw9j1P4WDmoi+7B6z0T+XyQz1Fc="/>
+    </form:update>
+</div>

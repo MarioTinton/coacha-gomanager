@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="gameresults/list">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/list.jspx"/>
+    </definition>
+<definition extends="default" name="gameresults/show">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/show.jspx"/>
+    </definition>
+<definition extends="default" name="gameresults/create">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/create.jspx"/>
+    </definition>
+<definition extends="default" name="gameresults/update">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/update.jspx"/>
+    </definition>
+<definition extends="default" name="gameresults/findGameResultsByWinnerOrLoser">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/findGameResultsByWinnerOrLoser.jspx"/>
+    </definition>
+<definition extends="default" name="gameresults/findGameResultsByWinnerAndLoser">
+        <put-attribute name="body" value="/WEB-INF/views/gameresults/findGameResultsByWinnerAndLoser.jspx"/>
+    </definition>
+</tiles-definitions>
